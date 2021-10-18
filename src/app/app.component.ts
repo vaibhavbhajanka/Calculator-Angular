@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +7,22 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'calculator';
+
+  @Input() num1!: number;
+  @Input() num2!: number;
+  @Input() num3!: number;
+
+  res1!: number;
+  res2!:number;
+
+  getResult(result:number)
+  {
+    this.res1=result;
+  }
+
+  getResult2(result:number)
+  {
+    this.res2=result;
+  }
+
 }
