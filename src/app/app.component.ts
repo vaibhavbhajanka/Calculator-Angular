@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Injectable} from '@angular/core';
+import {MatSnackBar} from '@angular/material/snack-bar'
 
 @Component({
   selector: 'app-root',
@@ -6,6 +7,7 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
   title = 'calculator';
 
   @Input() num1!: number;
@@ -24,5 +26,13 @@ export class AppComponent {
   {
     this.res2=result;
   }
+
+
+  constructor(public snackBar: MatSnackBar) {}
+
+  openSnackBar(message: string, action: string) {
+      this.snackBar.open(message, action);
+   }
+
 
 }
